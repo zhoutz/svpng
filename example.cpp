@@ -9,7 +9,7 @@ void test_rgb() {
       *p++ = (unsigned char)y; /* G */
       *p++ = 128;              /* B */
     }
-  svpng("rgb.png", 256, 256, rgb, false);
+  svpng("./rgb.png", 256, 256, rgb, false);
 }
 
 void test_rgba() {
@@ -22,7 +22,7 @@ void test_rgba() {
       *p++ = 128;                          /* B */
       *p++ = (unsigned char)((x + y) / 2); /* A */
     }
-  svpng("rgba.png", 256, 256, rgba, true);
+  svpng("./rgba.png", 256, 256, rgba, true);
 }
 
 void test_high_reso(unsigned width, unsigned height) {
@@ -36,13 +36,13 @@ void test_high_reso(unsigned width, unsigned height) {
       *p++ = (unsigned char)(x + y);         /* A */
     }
   }
-  svpng("wallpaper.png", width, height, rgba, true);
+  svpng("./wallpaper.png", width, height, rgba, true);
   free(rgba);
 }
 
 int main() {
-  // test_rgb();
-  // test_rgba();
+  test_rgb();
+  test_rgba();
   test_high_reso(3840, 2160);
 
   return 0;

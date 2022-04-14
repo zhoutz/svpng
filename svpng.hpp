@@ -136,4 +136,5 @@ inline void svpng(char const* filename, unsigned w, unsigned h,
   SVPNG_BEGIN("IEND", 0);
   SVPNG_END(); /* IEND chunk {} */
   fclose(fp);
+  printf("svpng: image saved in file \"%s\"\n", filename);
 }
